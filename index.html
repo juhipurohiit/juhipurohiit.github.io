@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juhi Purohiit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--ink:#17202c;--muted:#5c6778;--line:#dde2e8;
+--teal:#3f7378;--teal-s:#ecf3f3;--indigo:#5b5f9c;--indigo-s:#eef0f7;--amber:#8a6a3a;--amber-s:#f7f1e6;--rose:#94566b;--rose-s:#f7eef0;--sage:#5b7d66;--sage-s:#edf2ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f151d;--surface:#161e28;--ink:#e8edf3;--muted:#98a4b3;--line:#2a3543;--teal:#86b5b9;--teal-s:#1a2c2f;--indigo:#a2a6d6;--indigo-s:#232536;--amber:#d2b184;--amber-s:#2f291f;--rose:#d49bad;--rose-s:#30232a;--sage:#a1c4ae;--sage-s:#212c25}}
+:root[data-theme="dark"]{--bg:#0f151d;--surface:#161e28;--ink:#e8edf3;--muted:#98a4b3;--line:#2a3543;--teal:#86b5b9;--teal-s:#1a2c2f;--indigo:#a2a6d6;--indigo-s:#232536;--amber:#d2b184;--amber-s:#2f291f;--rose:#d49bad;--rose-s:#30232a;--sage:#a1c4ae;--sage-s:#212c25}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px;width:100%}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.brand{font-weight:800;text-decoration:none;letter-spacing:-.01em}
+.right{display:flex;align-items:center;gap:6px}
+.links a{text-decoration:none;font-size:.95rem;padding:5px 12px;border-radius:99px;color:var(--muted);font-weight:500}
+.links a:hover{background:var(--surface)}
+.links a.on{background:var(--teal-s);color:var(--teal)}
+.rbtn{text-decoration:none;font:inherit;font-weight:500;font-size:.92rem;padding:5px 16px;border-radius:99px;background:var(--ink);color:var(--bg);border:0;cursor:pointer;margin-left:6px}
+main{flex:1}
+.page{display:none;padding:56px 0 24px}.page.on{display:block}
+.t-home{--c:var(--teal);--c-s:var(--teal-s)}.t-about{--c:var(--sage);--c-s:var(--sage-s)}.t-proj{--c:var(--indigo);--c-s:var(--indigo-s)}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);line-height:1;letter-spacing:-.03em;font-weight:800;margin:0 0 20px}
+h2{font-size:clamp(1.7rem,4.5vw,2.2rem);letter-spacing:-.02em;margin:0 0 8px;line-height:1.15}
+h3{margin:0 0 4px;font-size:1.15rem}
+.sub{color:var(--muted);margin:0 0 28px;max-width:40em}
+.lead{font-size:1.2rem;max-width:34em;margin:0 0 12px}
+.role{display:inline-block;background:var(--c-s);color:var(--c);padding:3px 12px;border-radius:99px;font-size:.9rem;font-weight:500;margin-bottom:18px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.photo{position:relative;max-width:330px;margin-left:auto}
+.photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;background:var(--c-s);border-radius:14px}
+.photo img{position:relative;width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:30px}
+.stats div{border-left:3px solid var(--c);padding-left:12px}
+.stats b{display:block;font-size:1.5rem;line-height:1.1}.stats span{font-size:.88rem;color:var(--muted)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:10px 20px;border-radius:99px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;font-size:.95rem}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+section.blk{padding:56px 0 8px}
+.lab{color:var(--muted);font-size:.9rem;margin-bottom:6px}
+.card,.item{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.item{border-top:4px solid var(--c);margin-bottom:20px;padding:26px}
+.feature{border-left:4px solid var(--c);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.card p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+.card.link{text-decoration:none;display:block;border-left:4px solid var(--c)}
+a.card.link:hover{background:var(--c-s)}
+.k{color:var(--c);font-weight:700;font-size:.85rem}
+.meta{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.item h4{margin:18px 0 6px;font-size:.95rem;color:var(--c)}
+.item p{margin:0 0 8px}
+ul{margin:0;padding-left:1.1em}li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{background:var(--c-s);color:var(--c);font-size:.82rem;padding:2px 10px;border-radius:99px;font-weight:500}
+.res{display:inline-block;margin-top:12px;font-weight:700;color:var(--c)}
+.lnk{display:inline-block;margin:10px 14px 0 0;color:var(--c);font-weight:500}
+.cases{margin-top:10px}.cases a{display:block;color:var(--c);font-weight:500;font-size:.95rem;text-decoration:none;padding:2px 0}
+.cases a:hover{text-decoration:underline}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.skill{margin-bottom:12px}.skill b{display:block;font-size:.88rem;color:var(--muted);font-weight:500}
+.bio p{margin:0 0 12px;max-width:40em}
+.pending{color:var(--muted);font-size:.9rem}
+footer{background:var(--surface);border-top:1px solid var(--line);padding:44px 0;margin-top:48px}
+footer h2{font-size:1.5rem}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:16px}
+.contact a{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--teal);text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.contact svg{width:22px;height:22px;fill:currentColor}
+small{display:block;margin-top:24px;color:var(--muted)}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.photo{margin:0 auto 14px 0;max-width:260px;order:-1}.links a{padding:5px 8px;font-size:.88rem}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#/">Juhi Purohiit</a>
+<div class="right"><div class="links"><a href="#/" data-p="home">Home</a><a href="#/about" data-p="about">About</a><a href="#/projects" data-p="proj">Projects</a></div>
+<a class="rbtn" href="Juhi_Purohit_Resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+</div></nav>
+
+<main>
+<!-- HOME -->
+<div class="page t-home" id="home"><div class="wrap">
+<div class="hero"><div>
+<span class="role">Data Analytics</span>
+<h1>Juhi Purohiit</h1>
+<p class="lead">I use data, analytics and AI to help organizations spot problems early and make better decisions.</p>
+<p class="lead" style="color:var(--muted)">I recently completed an Enterprise Analytics internship at Jio Platforms, building observability and log analytics for enterprise services. Earlier, I tested trading platforms at Reliance Securities.</p>
+<div class="stats">
+<div><b>10+</b><span>Enterprise services in one platform</span></div>
+<div><b>6+</b><span>KPI dashboards designed</span></div>
+<div><b>2</b><span>Research papers</span></div>
+</div>
+<div class="btns"><a class="btn" href="#/projects">View portfolio</a><a class="btn alt" href="#/about">About me</a></div>
+</div>
+<div class="photo"><img alt="Juhi Purohiit" src="photo.jpg"></div>
+</div>
+
+<section class="blk"><div class="lab">Selected work</div><h2>Analytics in practice</h2>
+<p class="sub">From enterprise platforms to NLP and reinforcement learning.</p>
+<a class="card link feature t-proj" href="#/projects"><span class="k">Internship · Jio Platforms</span><h3>Observability and Log Analytics Platform</h3><p>A real-time platform that brings events from 10+ enterprise services into one place, with GIN-indexed full-text search, KPI dashboards across Network, Database, Storage and Big Data, and tuned PostgreSQL and REST APIs.</p><div class="tags"><span>React.js</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>Docker</span></div></a>
+<div class="grid">
+<a class="card link t-proj" href="#/projects"><span class="k">Tableau</span><h3>EV Sales Analysis</h3><p>50,000+ sales records; Tesla at 63% market share.</p></a>
+<a class="card link t-proj" href="#/projects"><span class="k">NLP</span><h3>Sentiment Analysis</h3><p>Aspect-level sentiment on 10K+ posts; +18% accuracy.</p></a>
+<a class="card link t-proj" href="#/projects"><span class="k">Reinforcement learning</span><h3>AI Checkers Engine</h3><p>Deep Q-Network with a 75%+ win rate.</p></a>
+</div>
+<div style="margin-top:20px"><a class="btn alt" href="#/projects">See all projects</a></div>
+</section>
+
+<section class="blk"><div class="lab">What I work on</div><h2>From data to decisions</h2>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Dashboards and KPIs</h3><p>Tableau, Power BI and Recharts dashboards that turn raw data into clear numbers.</p></div>
+<div class="card"><h3>Monitoring and reliability</h3><p>Log analytics and KPI monitoring that surface issues early across enterprise systems.</p></div>
+<div class="card"><h3>NLP</h3><p>Sentiment, entity and bias detection on text.</p></div>
+<div class="card"><h3>Predictive modelling</h3><p>Deep learning for churn prediction, plus reinforcement learning for decision-making in games.</p></div>
+<div class="card"><h3>Research</h3><p>Two papers, on customer churn and on media bias in Indian news.</p></div>
+<div class="card"><h3>Risk and quality</h3><p>Root-cause analysis and regression testing on a live trading platform, to catch failures before release.</p></div>
+</div></section>
+
+<section class="blk"><div class="lab">Skills and tooling</div><h2>The stack I reach for</h2>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Data and analytics</h3><p>SQL, Python, Tableau, Power BI, Excel, Matplotlib, Seaborn, SAS ODA</p><div class="cases"><a href="#/projects">Observability platform</a><a href="#/projects">EV Sales Analysis</a></div></div>
+<div class="card"><h3>ML, NLP and prediction</h3><p>PyTorch, TensorFlow, BERT, Hugging Face, Scikit-learn, NLTK, Streamlit</p><div class="cases"><a href="#/projects">Sentiment Analysis</a><a href="#/projects">Churn prediction paper</a></div></div>
+<div class="card"><h3>Engineering</h3><p>React, TypeScript, Node.js, Express, PostgreSQL, Docker, Tailwind CSS</p><div class="cases"><a href="#/projects">Jio internship</a><a href="#/about">Leadership</a></div></div>
+</div></section>
+
+<section class="blk"><div class="lab">About me</div>
+<div class="bio"><p>I'm a computer engineering graduate focused on data, analytics and AI. I like building where technology meets business, and I learn by doing through internships, projects and leadership.</p>
+<p>Outside engineering, I love literature. It sharpens how I frame problems and tell the story behind the numbers.</p></div>
+<a class="btn alt" href="#/about">More about me</a></section>
+</div></div>
+
+<!-- ABOUT -->
+<div class="page t-about" id="about"><div class="wrap">
+<h2>About</h2><p class="sub">Logic and imagination, applied to data.</p>
+<div class="item bio"><p>I'm a computer engineering graduate focused on data, analytics and AI, and on using them to improve how real systems perform and decide.</p>
+<p>I recently completed an Enterprise Analytics internship at Jio Platforms. I worked on an observability platform and learned how enterprise-scale systems are monitored, and how data supports reliability, performance and operational decisions.</p>
+<p>Outside engineering, I was Vice President of Taqneeq, our college tech fest, and Technical Secretary of the Student Council. Both roles built my leadership and communication in fast-moving teams.</p>
+<p>I'm drawn to the side of analytics that deals with uncertainty: spotting problems early, predicting what could go wrong, and turning that into decisions. That thread runs through my monitoring work at Jio, my testing work at a securities firm, and my churn prediction research.</p>
+<p>I want to build solutions where technology meets business. I also love literature, which sharpens my storytelling and the way I frame problems.</p>
+<p><b>Open to conversations about analytics, data systems and building meaningful technology.</b></p></div>
+<div class="two">
+<div class="item"><h3>Education</h3><div class="meta">2022 to 2026</div><p><b>B.Tech Computer Engineering</b><br>Mukesh Patel School of Technology Management and Engineering, NMIMS University</p><p>CGPA 3.56/4.0 (WES)</p>
+<h4>Awards</h4><ul><li>Student Ambassador Award (2026)</li><li>Best Secretary Award (2026)</li></ul></div>
+<div class="item"><h3>Certificates</h3><div style="margin-top:10px"></div>
+<ul>
+<li>BCG Data Science Job Simulation (2026): <a class="lnk" style="margin:0" href="https://www.theforage.com/completion-certificates/SKZxezskWgmFjRvj9/Tcz8gTtprzAS4xSoK_SKZxezskWgmFjRvj9_X6ahgYHZyZZJAz2cG_1788872538800_completion_certificate.pdf" target="_blank" rel="noopener">certificate</a></li>
+<li>McKinsey Forward Program (2025): <a class="lnk" style="margin:0" href="https://drive.google.com/file/d/1eSn5FwdROzv0of59YX49RoJ1-jMXAifq/view?usp=sharing" target="_blank" rel="noopener">certificate</a>, <a class="lnk" style="margin:0" href="https://www.credly.com/badges/7490dd9c-081c-4541-82eb-135cc3f13c55/public_url" target="_blank" rel="noopener">badge</a></li>
+<li>AWS Academy Cloud Architecting (2025): <a class="lnk" style="margin:0" href="https://drive.google.com/file/d/1pH_ENyKVMLPknKO63qW68BQJni_3fD7X/view" target="_blank" rel="noopener">certificate</a></li>
+<li>Deloitte Australia Data Analytics, Forage (ongoing)</li>
+<li>Wharton Business Analytics, Coursera (ongoing)</li></ul></div>
+</div>
+<div class="item"><h3>Leadership</h3><ul style="margin-top:12px">
+<li><b>Vice President, Taqneeq (2025 to 2026).</b> Managed engagement across 18+ committees and 25+ industry partners, and built a mobile app for event participation.</li>
+<li><b>Technical Secretary, Student Council (2025 to 2026).</b> Led the Bombay Research Summit 2025 and institute-wide technical initiatives with a 50-member team.</li>
+<li><b>Publicity Head, IETE Student Forum (2023 to 2024).</b> Grew participation by over 200%.</li>
+<li><b>Social Lead, IBlieve (2021 to 2023).</b> Coordinated 30+ virtual events across 15+ countries.</li>
+<li><b>Marketing Lead, Bizzneeti (2023).</b> Marketed a national business plan competition with 250+ participants.</li>
+<li><b>Tutor and Mentor (2023).</b> 25+ sessions for 10+ IBDP students on Extended Essay and ToK.</li>
+<li><b>Executive, Colloquium (2022 to 2023).</b> Organized 3+ case competitions, speaker sessions and workshops.</li></ul></div>
+<div class="two">
+<div class="item"><h3>Skills</h3><div style="margin-top:12px"></div>
+<div class="skill"><b>Programming</b>Python, C++, SQL, HTML, CSS</div>
+<div class="skill"><b>Visualization</b>Tableau, Power BI, Matplotlib, Seaborn, SAS ODA</div>
+<div class="skill"><b>ML and tools</b>TensorFlow, Streamlit, Excel, Jira, Figma</div>
+<div class="skill"><b>Core</b>DBMS, DSA, OOPS</div></div>
+<div class="item"><h3>Beyond work</h3><p style="margin-top:10px">Certified dance performer at Shiamak Davar Academy. Reading, blog writing, abacus and cricket.</p><p><b>Languages:</b> English, Hindi, French (B2)</p></div>
+</div></div></div>
+
+<!-- PROJECTS -->
+<div class="page t-proj" id="proj"><div class="wrap">
+<h2>Projects</h2><p class="sub">Internships, projects and research, each with its outcome.</p>
+<div class="lab">Internships</div>
+<div class="item"><h3>Data Analytics Intern, Jio Platforms (JPL)</h3><div class="meta">Jan to May 2026 · Telecom and digital services</div>
+<h4>The problem</h4><p>Events from many enterprise services lived in separate places, which made it slow to investigate issues and track system health. The goal was to find problems faster.</p>
+<h4>What I built</h4><ul><li>A real-time observability and log analytics platform consolidating events from 10+ enterprise services.</li><li>GIN-indexed full-text search, advanced filtering and export, to cut log retrieval time.</li><li>6+ KPI dashboards across Network, Database, Storage and Big Data platforms.</li><li>Performance work on 10+ REST APIs and optimized PostgreSQL workloads so the platform scales.</li></ul>
+<div class="tags"><span>React.js</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>Docker</span><span>Tailwind CSS</span><span>Recharts</span></div></div>
+<div class="item"><h3>Tech Intern, Torus Group (Reliance Securities)</h3><div class="meta">Nov 2022 to Jan 2023 · Fintech: digital trading and wealth platforms</div>
+<ul><li>Evaluated 50+ test scenarios across customer-facing workflows to find functional and performance issues.</li><li>Ran root-cause analysis on 30+ critical issues to improve stability before deployment.</li><li>Validated fixes for 30+ defects across 50+ scenarios with regression testing.</li></ul>
+<div class="tags"><span>Manual Testing</span><span>ADB</span><span>Jira</span><span>Android Studio</span></div></div>
+<div class="lab" style="margin-top:36px">Projects</div>
+<div class="item"><h3>EV Sales Analysis</h3><div class="meta">2025 · Tableau</div><p>An interactive Tableau dashboard on 50,000+ electric vehicle sales records, covering market share, pricing and adoption trends, and how BEV and PHEV adoption differ.</p><span class="res">Tesla holds a 63% market share in the data</span></div>
+<div class="item"><h3>Sentiment Analysis</h3><div class="meta">2025 · NLP</div><p>A pipeline over 10K+ social media posts that extracts aspect-level sentiment and entity relationships, showing what people feel about specific topics.</p><span class="res">+18% classification accuracy</span><div class="tags"><span>BERT</span><span>Hugging Face</span><span>NLTK</span><span>Scikit-learn</span></div></div>
+<div class="item"><h3>AI Checkers Engine</h3><div class="meta">2024 · Reinforcement learning</div><p>A checkers engine built on a Deep Q-Network, tuned with reward shaping and epsilon-decay.</p><span class="res">75%+ win rate, 30% shorter training time</span><div class="tags"><span>Python</span><span>PyTorch</span><span>Pygame</span></div></div>
+<div class="lab" style="margin-top:36px">Research</div>
+<div class="item"><h3>A Comparative Study of Deep Learning Architectures for Customer Churn Predictions</h3><div class="meta">Purohit A, Satija S, Purohit J, Deshmukh K · 2025 · Springer Nature, Lecture Notes in Networks and Systems, Vol 1269</div><p>Compares deep learning models for predicting which customers are likely to leave, a risk-scoring problem at heart.</p><a class="lnk" style="margin:0" href="https://doi.org/10.1007/978-981-96-4319-6_48" target="_blank" rel="noopener">Read the paper</a></div>
+<div class="item"><h3>BiasCatcher: AI Powered Media Bias Detection in Indian News</h3><div class="meta">Purohit J, Parikh A, Bohra H, Puthran S, et al. · 2026 · Cureus Journal of Computer Science (Springer Nature platform)</div><span class="pending">Submitted for publication</span></div>
+</div></div>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Get in touch</h2>
+<p style="margin:0;color:var(--muted)">Open to data analytics internships and conversations about data systems.</p>
+<div class="contact">
+<a href="mailto:juhipurohit10@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.6 2L12 12.6 19.4 7zM4 8.9V17h16V8.9l-8 6z"/></svg>juhipurohit10@gmail.com</a>
+<a href="https://www.linkedin.com/in/juhipurohit/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>LinkedIn</a>
+<a href="tel:+919167843731">+91 91678 43731</a>
+</div>
+<small>Juhi Purohiit · Mumbai, India</small>
+</div></footer>
+
+<script>
+(function(){
+var pages={"":"home","about":"about","projects":"proj"};
+function route(){
+var h=(location.hash||"").replace(/^#\/?/,"");
+var id=pages[h]||"home";
+document.querySelectorAll(".page").forEach(function(p){p.classList.toggle("on",p.id===id)});
+document.querySelectorAll(".links a").forEach(function(a){a.classList.toggle("on",a.dataset.p===id)});
+window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+})();
+</script>
+</body>
+</html>
